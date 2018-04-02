@@ -79,4 +79,3 @@ The entire algorithm is designed to work in the given steps:
   your code. Make sure to mention the libraries in the TARGET_LINK_LIBRARIES of CMakeLists.txt which is a build configuration 
   file that comes along with any project you create in CLion.
   
-  The entire project can be downloaded from this [link](https://github.com/NNSatyaKarthik/DeBruijnGraph).

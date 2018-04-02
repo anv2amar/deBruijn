@@ -227,5 +227,5 @@ On Ubuntu machine, run the following command to resolve the issue:
 sudo apt-get update && sudo apt-get install build-essential ```
 ```
 
-For details Introduction to the flow of the algorithm, Refer to this [ReadMe.md](https://github.com/NNSatyaKarthik/DeBruijnGraph/tree/master/cppCode/README.md)
+For details Introduction to the flow of the algorithm, Refer to this [ReadMe.md](https://github.com/anv2amar/deBruijn/blob/master/cppCode/README.md)
 
