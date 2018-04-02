@@ -1,22 +1,19 @@
 This is an academic project implemented in Fall 2017 at University of Florida in course CIS 6930: Big Data for Biological Applications/Bioinformatic Algorithms. This project is implemented under the guidance of [Dr.Christina Boucher](https://www.christinaboucher.com/). 
 
 Contributers to this project are : 
-[Naga Satya Karthik, Narikimilli](http://github.com/NNSatyaKarthik)
-[Akshat Bhardwaj](https://github.com/bhardwajat)
-[Sahil Tiwari](https://github.com/tiwarisahil91)
 [Amarnath Vaid](http://github.com/anv2amar)
+[Akshat Bhardwaj](https://github.com/bhardwajat)
+[Naga Satya Karthik, Narikimilli](http://github.com/NNSatyaKarthik)
+[Sahil Tiwari](https://github.com/tiwarisahil91)
 
 # Problem Statement
 de Bruijn Graphs are succinct data structures. In bioinformatics, they are used for assembly of genome sequences obtained from a Next Generation Sequence (NGS) library. These de Bruijn graphs must be implemented using data structures that are space and time efficient. Djamal Bellazzougui laid out an approach to implement deBruijn graphs efficiently which supported dynamic insertion and deletion at the same time in his paper [Fully Dynamic De Bruijn Graphs](https://arxiv.org/abs/1607.04909). The aim of our project is to implement Dynamic addition and deletion of edges into the de Bruijn graph which is constructed using a similar compact data structure.
 
-# Research Paper
-Our implementation and insights of this project are presented in a research paper which can be found [here](https://github.com/NNSatyaKarthik/DeBruijnGraph/tree/master/papers). This paper is written in the Journal of BioInformatics format. 
-
 # Sample data
-The sample datasets that are used in this project are found in this [folder](https://github.com/NNSatyaKarthik/DeBruijnGraph/tree/master/datasets).
+The sample datasets that are used in this project are found in this [folder](https://github.com/anv2amar/deBruijn/tree/master/datasets).
 
 # Code & Executable. 
-Source code of this project in the directory [cppCode](https://github.com/NNSatyaKarthik/DeBruijnGraph/tree/master/cppCode). Follow the steps to build an executable. If you have an executable already refer to the section [Running an executable](#Running an Executable). 
+Source code of this project in the directory [cppCode](https://github.com/anv2amae/deBruijn/tree/master/cppCode). Follow the steps to build an executable. If you have an executable already refer to the section [Running an executable](#Running an Executable). 
 ## Build the Executable
 ### Prerequisites
 - Cmake
@@ -61,12 +58,12 @@ Assuming now both boost and cmake are installed on your machine
 #### Clone the repo
 Run the following steps to get the executable of the project. Name of the executable is **cppCode**. 
 ```
-git clone https://github.com/NNSatyaKarthik/DeBruijnGraph.git
+git clone https://github.com/anv2amar/deBruijn.git
 ```
 
 #### Build the executable on your machine
 ```
-cd DeBruijnGraph/cppCode/
+cd deBruijn/cppCode/
 cmake . 
 make
 
@@ -84,15 +81,9 @@ Go to the folder where you were while executing the *git clone* step.
 cd ../../
 ```
 
-See if you can access the executable from here like this
-```
-ll -alh DeBruijnGraph/cppCode/cppCode
-# -rwxrwxr-x 1 satya_karthik1434u satya_karthik1434u 1.5M Dec  9 16:33 DeBruijnGraph/cppCode/cppCode*
-```
-
 Once you are in the write directory Execute the executable: 
 ```
-./DeBruijnGraph/cppCode/cppCode --help
+./deBruijn/cppCode/cppCode --help
 ```
 This should output as follows: 
 ```
@@ -131,7 +122,7 @@ Note:
 
 cd to the this current directory: 
 ```
-git clone https://github.com/NNSatyaKarthik/DeBruijnGraph.git && cd DeBruijnGraph/
+git clone https://github.com/anv2amar/deBruijn.git && cd deBruijn/
 ```
 Steps to build the image: Builds an image all the cmake/boost pre installed.
 ```
@@ -144,12 +135,12 @@ Steps to run the image: This
 - Run's the main command.
 
 ```
-docker run -it -v "$(pwd)":/DeBruijnGraph  ub:latest /bin/bash /DeBruijnGraph/compile.sh
+docker run -it -v "$(pwd)":/deBruijn  ub:latest /bin/bash /deBruijn/compile.sh
 ```
 
 If you need to just run the executable (only execute this after atleast executing previous command)
 ```
-docker run -it -v "$(pwd)":/DeBruijnGraph  db:latest  /DeBruijnGraph/cppCode/cppCode --help
+docker run -it -v "$(pwd)":/deBruijn  db:latest  /deBruijn/cppCode/cppCode --help
 ```
 
 Here is a sample help message from the executable: 
@@ -182,7 +173,7 @@ Allowed options:
 
 For running the Test Cases: 
 ```
-docker run -it -v "$(pwd)":/DeBruijnGraph  db:latest  /DeBruijnGraph/cppCode/cppCode --choice 0
+docker run -it -v "$(pwd)":/deBruijn  db:latest  /deBruijn/cppCode/cppCode --choice 0
 ```
 
 ###  For Preprocessing the fastq to some other format 
@@ -190,20 +181,20 @@ docker run -it -v "$(pwd)":/DeBruijnGraph  db:latest  /DeBruijnGraph/cppCode/cpp
 
 Place the data files in the DeBruijnGraph and give the path as "/DeBruijnGraphs/\<*where the data file is*\>"
 ```
-docker run -it -v "$(pwd)":/DeBruijnGraph  db:latest  /DeBruijnGraph/cppCode/cppCode \
+docker run -it -v "$(pwd)":/deBruijn  db:latest  /deBruijn/cppCode/cppCode \
  --choice 1 \
- --input-file /DeBruijnGraph/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq \
- --output-file /DeBruijnGraph/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq.out
+ --input-file /deBruijn/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq \
+ --output-file /deBruijn/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq.out
 
 ```
 
 ### For adding dynamic edges with a static fraction of 0.5
 ```
-docker run -it -v "$(pwd)":/DeBruijnGraph  db:latest /DeBruijnGraph/cppCode/cppCode \                              
+docker run -it -v "$(pwd)":/deBruijn  db:latest /deBruijn/cppCode/cppCode \                              
 --choice 2 \
 --k 15  \             
 --static-fraction 0.5 \
---input-file /DeBruijnGraph/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq.out 
+--input-file /deBruijn/datasets/escherichia_coli_k12_mg1655.m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.1.fastq.out 
 ```
 This build process is tested with the following version of docker on mac. 
 ```
