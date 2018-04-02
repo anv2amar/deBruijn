@@ -1,0 +1,8 @@
+//
+// Created by Naga Satya Karthik on 11/10/17.
+//
+
+#ifndef CPPCODE_UTILITY_FUNCTIONS_H
+#define CPPCODE_UTILITY_FUNCTIONS_H
+
+#endif //CPPCODE_UTILITY_FUNCTIONS_H
